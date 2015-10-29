@@ -3,14 +3,14 @@
 <head>
 	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;">
 	<style type="text/css">
-	body {
-    background: url("1.png") no-repeat;
+	.bg {
+    background: url("1.png") no-repeat 50% 100%;
     position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-size: cover;
+    background-size: contain;
 }
 #countdown {
     background: rgba(0, 0, 0, 0.33);
@@ -26,24 +26,27 @@
 }
 	</style>
 </head>	
-	<div id="countdown"></div>
-	<script type="text/javascript">
-		var wedding_date= new Date("Wed Dec 30 2015 00:00:00 GMT+0800");
-		var cddiv = document.getElementById("countdown");
-		var dayMill = 24*60*60*1000;
+<body>
+<div class="bg"/>
+<div id="countdown"></div>
+<script type="text/javascript">
+	var wedding_date= new Date("Wed Dec 30 2015 00:00:00 GMT+0800");
+	var cddiv = document.getElementById("countdown");
+	var dayMill = 24*60*60*1000;
 
-		var countdown = function(){
-			var current = new Date();
-			var interval = wedding_date.getTime() - current.getTime();
+	var countdown = function(){
+		var current = new Date();
+		var interval = wedding_date.getTime() - current.getTime();
 
-			var day = Math.floor(interval/dayMill);
-			var hour = Math.floor(interval/3600000) % 24;
-			var min = Math.floor(interval/60000) % 60;
-			var sec = Math.floor(interval/1000) % 60;
-			cddiv.innerText = '距离 Zimmem 与 Loly 结婚还有 ' +  day + '天 ' + hour + ':' + min + ':' + sec;
-		}
+		var day = Math.floor(interval/dayMill);
+		var hour = Math.floor(interval/3600000) % 24;
+		var min = Math.floor(interval/60000) % 60;
+		var sec = Math.floor(interval/1000) % 60;
+		cddiv.innerText = '距离 Zimmem 与 Loly 结婚还有 ' +  day + '天 ' + hour + ':' + min + ':' + sec;
+	}
 
-		countdown();
-		setInterval(countdown, 1000)
-	</script>
+	countdown();
+	setInterval(countdown, 1000)
+</script>
+</body>
 </html>
