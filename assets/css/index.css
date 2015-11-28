@@ -1,0 +1,268 @@
+html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: arial;
+    text-align: center;
+}
+
+* {
+    margin:0;
+    padding: 0;
+}
+
+h2 {
+    margin-top: 10px;
+}
+
+.item1 .couple {
+    /* position: absolute; */
+    /* width: 100%; */
+    /* top: 43px; */
+    /* font-size: 20px; */
+    /* color: #5E1399; */
+}
+
+.itme1 .couple {
+    position: absolute;
+}
+
+.title {
+    font-size: 30px;
+    position: absolute;
+    top: 10%;
+    width: 100%;
+    color: red;
+}
+ul {
+    list-style: none;
+}
+
+.item2 {
+    background-color: #0067A6;
+}
+.item1 {
+    background: url("../img/496A7725.jpg") no-repeat;
+    background-size: cover;
+}
+.item3 {
+    background-color: #008972;
+}
+.item4 {
+    background-color: #F5C564;
+}
+.item5 {
+    background-color: #F2572D;
+}
+.item6 {
+    background-color: #0067A6;
+}
+.item7 {
+    background: url("../img/496A7799.jpg") no-repeat;
+    background-size: cover;
+}
+
+.item1 .part1 {
+    position: absolute;
+    top: 100px;
+    left: 19%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item1 .part2 {
+    position: absolute;
+    bottom: 100px;
+    right: 19%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item1 .bottom{
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 195px;
+    z-index: 1;
+    background: url(../img/30_root.png) no-repeat;
+    background-size: cover;
+}
+
+.item3 .part1 {
+    position: absolute;
+    top: 100px;
+    left: 19%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item3 .part2 {
+    position: absolute;
+    bottom: 100px;
+    right: 19%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item2 .part1 {
+    position: absolute;
+    top: 100px;
+    right: 19%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item2 .part3 {
+    position: absolute;
+    bottom: 60px;
+    left: 19%;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(116, 178, 9);
+}
+.item2 .part2 {
+    position: absolute;
+    top: 100px;
+    left: 19%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item4 .part1 {
+    position: absolute;
+    top: 100px;
+    left: 19%;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item4 .part2 {
+    position: absolute;
+    bottom: 100px;
+    right: 19%;
+    text-align: center;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(116, 178, 9);
+}
+.item5 .part1 {
+    position: absolute;
+    bottom: 100px;
+    right: 19%;
+    text-align: center;
+    width: 150px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item5 .part2 {
+    position: absolute;
+    top: 100px;
+    left: 19%;
+    text-align: center;
+    width: 150px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+
+.item6 .part2 {
+    position: absolute;
+    top: 100px;
+    left: 19%;
+    text-align: center;
+    width: 150px;
+    height: 100px;
+    background-color: rgb(116, 178, 9);
+}
+.item6 .part1 {
+    position: absolute;
+    bottom: 100px;
+    left: 19%;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    background-color: rgb(116, 178, 9);
+}
+.item7 .regist-form {
+    position: absolute;
+    bottom: 100px;
+    left: 10%;
+    text-align: center;
+    width: 250px;
+    height: 350px;
+    background-color: rgba(254, 223, 223, 0.87);
+    padding: 20px;@font-size:15px;
+    font-size: 17px;
+    border-radius: 25px;
+}
+
+.item7 .regist-form .ctrl-line{
+display: block;width: 200px;
+margin-top: 34px;text-align: left;color:  #FC530C;}
+
+
+.item7 .regist-form .ctrl-line .ctrl-label{
+    display:inline-block;
+    width: 26%;
+    color: #FC530C;
+}
+
+
+.item7 .regist-form .ctrl-line .ctrl-input{
+    display:inline-block;
+    width: 60%;
+}
+
+input {
+    padding: 5px;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #FC530C;
+    text-align: center;
+    color: #FC530C;
+    font-size: 15px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 22px;
+    background-color: #FF6969;
+    border-radius: 36px;
+    color: #A71E1E;
+    text-decoration: initial;
+    text-align: center;
+    margin: auto;
+    font-size: 25px;
+}
+
+.edge {
+    position: absolute;
+    z-index: 2;
+    bottom: 92px;
+    width: 100%;
+    height: 200px;
+    background: url(../img/30_edge.png) no-repeat;
+    background-size: contain;
+    background-position: 50%;
+}
+
+.edge .edge-wrapper {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5E1399;
+    position: absolute;
+    width: 100%;
+    top: 14px;
+}
+
+.edge div {
+    margin-top: 15px;
+}
