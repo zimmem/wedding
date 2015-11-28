@@ -193,19 +193,23 @@ ul {
 }
 .item7 .regist-form {
     position: absolute;
-    bottom: 100px;
+    bottom: 20%;
     left: 10%;
+    right: 10%;
+    top: 10%;
     text-align: center;
-    width: 250px;
-    height: 350px;
+    /* width: 250px; */
+    /* height: 350px; */
     background-color: rgba(254, 223, 223, 0.87);
     padding: 20px;@font-size:15px;
     font-size: 17px;
     border-radius: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .item7 .regist-form .ctrl-line{
-display: block;width: 200px;
+display: block;width: 100%;
 margin-top: 34px;text-align: left;color:  #FC530C;}
 
 
@@ -213,6 +217,7 @@ margin-top: 34px;text-align: left;color:  #FC530C;}
     display:inline-block;
     width: 26%;
     color: #FC530C;
+    /* text-align: right; */
 }
 
 
@@ -221,7 +226,7 @@ margin-top: 34px;text-align: left;color:  #FC530C;}
     width: 60%;
 }
 
-input {
+.ctrl-input input {
     padding: 5px;
     background-color: transparent;
     border: 0;
@@ -229,11 +234,15 @@ input {
     text-align: center;
     color: #FC530C;
     font-size: 15px;
+    width: 100%;
+    display: inline-block;
 }
 
+input:focus{ outline:none } 
+
 .btn {
-    display: inline-block;
-    padding: 22px;
+    display: block;
+    padding: 14px;
     background-color: #FF6969;
     border-radius: 36px;
     color: #A71E1E;
