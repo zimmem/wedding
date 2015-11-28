@@ -29,7 +29,7 @@
            <div class="bottom slideDown"></div>
         </div>
          <div class="item item7">
-            <div class="part regist-form zoomIn">
+            <div class="part regist-form zoomIn escape">
                 <form>
                     <div class="ctrl-line">
                         <div class="ctrl-label">尊称：</div>
@@ -88,7 +88,11 @@
     <script type="text/javascript" src="./assets/H5FullscreenPage/H5FullscreenPage.js"></script>
     <script type="text/javascript">
     
-    H5FullscreenPage.init({'type':5,'pageShow' : function(dom){
+    // $('form').on('touchmove', function(e){
+    //     //e.preventDefault();
+    // });
+
+    H5FullscreenPage.init({'type':1,'pageShow' : function(dom){
         
     },'pageHide' : function(dom){
         //console.log(dom);

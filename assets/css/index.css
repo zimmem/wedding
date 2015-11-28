@@ -205,7 +205,7 @@ ul {
     font-size: 17px;
     border-radius: 25px;
     overflow-y: auto;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 .item7 .regist-form .ctrl-line{

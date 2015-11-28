@@ -133,8 +133,19 @@
          var dragStart = null;//开始抓取标志位
          var percentage = 0;//拖动量的百分比
          var currentItem;
+
+         function touchEscape(event){
+            var escape = $(event.target).closest('.escape');
+            if(escape.length && escape[0].scrollHeight - escape[0].clientHeight > 0){
+                console.info("escape")
+                return true; 
+            }
+         }
           
          function touchStart(event) {
+            if(touchEscape(event)) return;
+            
+
             if (dragStart !== null) return;
             var item = $(event.target).closest('.item');
              if (!item.length) {
@@ -155,6 +166,9 @@
          }
           
          function touchMove (event) {
+
+            if(touchEscape(event)) return;
+
              //console.log(33);
             //防止ios拖动事件
             event.preventDefault();
@@ -192,6 +206,9 @@
          }
           
          function touchEnd (event) {
+
+           if(touchEscape(event)) return;
+
             //防止多次滚动，故增加一个覆盖层
             $('.overlay').show();
             dragStart = null;
@@ -374,7 +391,7 @@
             });
             // 绑定事件
             $(document).on('touchmove', function(e){
-                e.preventDefault();
+                //e.preventDefault();
             });
             if (opt.type > 4) {
                 opt.type = opt.type - 4;
