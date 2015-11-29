@@ -18,6 +18,7 @@
 
             </div>
         </div> -->
+        
          <div class="item item1">
            <div class="edge slideUp">
                 <div class="edge-wrapper">
@@ -28,26 +29,50 @@
            </div>
            <div class="bottom slideDown"></div>
         </div>
+         <div class="item invitation">
+           <h2 class="part fadeIn" >诚挚邀请</h2>
+           <div class="part invitation-desc fadeIn" data-delay="500">新郎 <span>庄钊文</span> 与新娘 <span>卢玲</span> 将于 <span class="date">2015-12-30</span> 日举行婚礼， 郑重地邀请您百忙之中抽出空闲前来参与， 真心期待您的光临。</div>
+           <div class="part time-address fadeIn" data-delay="1000">
+                <p><span class="label">时间：</span> 2015-12-30 12:00</p>
+                <p><span class="label">地点：</span> 潮州金龙大洒店</p>
+           </div>
+        </div>
+         <div class="item item-address">
+           <h2 class="part fadeIn" >婚礼地址</h2>
+           <h3 class="part fadeIn" >潮州金龙大洒店</h3>
+           <div class="part traffic" >
+               
+           </div>
+           <div class="nav-wrapper slideDown">
+                <img src="./assets/img/map.png" class="map"/>
+                <a class="nav-btn" href="geo:23.6559581,116.6430505">导航</a>
+            </div>
+
+            <div class="connect-wrapper">
+                <a href="tel:18680683430" class="btn-tel">联系新郎</a>
+                <a href="tel:15915866691" class="btn-tel">联系新娘</a>
+            </div>
+        </div>
          <div class="item item7">
             <div class="part regist-form zoomIn escape">
-                <form>
+                <form id="regist-form">
                     <div class="ctrl-line">
                         <div class="ctrl-label">尊称：</div>
-                        <div class="ctrl-input"><input></input></div>
+                        <div class="ctrl-input"><input name="nick"></input></div>
                     </div>
                     <div class="ctrl-line">
                         <div class="ctrl-label">人数：</div>
-                        <div class="ctrl-input"><input></input></div>
+                        <div class="ctrl-input"><input  type="number" name="number"></input></div>
                     </div>
                      <div class="ctrl-line">
                         <div class="ctrl-label">电话：</div>
-                        <div class="ctrl-input"><input type="tel"></input></div>
+                        <div class="ctrl-input"><input type="tel" name="mobile"></input></div>
                     </div>
                     <div class="ctrl-line">
-                        <div>是否安排住宿：<input type="checkbox"></input></div>
+                        <div>是否安排住宿：<input type="checkbox" name="hotel"></input></div>
                     </div>
                     <div class="ctrl-line" >
-                        <a href="javascript:void(0);" class="btn" >出席婚宴</a>
+                        <a href="javascript:void(0);" class="btn" id="regist-submit-btn" >出席婚宴</a>
                     </div>
                 </form> 
             </div>
@@ -86,6 +111,7 @@
     </div>
     <script src="http://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
     <script type="text/javascript" src="./assets/H5FullscreenPage/H5FullscreenPage.js"></script>
+     <script type="text/javascript" src="./assets/js/wedding.js"></script>
     <script type="text/javascript">
     
     // $('form').on('touchmove', function(e){

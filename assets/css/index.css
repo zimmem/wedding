@@ -11,6 +11,8 @@ html, body {
     padding: 0;
 }
 
+
+
 h2 {
     margin-top: 10px;
 }
@@ -274,4 +276,96 @@ input:focus{ outline:none }
 
 .edge div {
     margin-top: 15px;
+}
+
+
+
+.invitation  {
+   background-color: #6B3182;
+}
+.invitation h2 {
+    margin-top: 50px;
+    color: #DFA7FF;
+}
+
+.invitation .invitation-desc {
+    color: #DFA7FF;
+    margin: 25px;
+    border: 1px solid rgb(100, 100, 100);
+    border-radius: 27px;
+    padding: 15px;
+    line-height: 2;
+}
+
+.invitation .invitation-desc span{
+    font-weight: bold;
+}
+
+.invitation .invitation-desc .date {
+    white-space: nowrap;
+}
+
+.invitation .time-address {
+    text-align: left;
+    margin: 25px;
+    padding: 16px;
+    color: #BC9AAD;
+    font-size: 20px;
+}
+
+.invitation .time-address p{
+    
+margin: 25px 0;
+}
+
+.invitation .time-address .label{
+    
+color: #A7A7A7;
+}
+
+.item-address{
+     background-color: #6B3182;
+}
+
+.item-address h2{
+     color: #FF7D7D;
+     padding: 20px;
+}
+
+.item-address h3{
+     color: #FF7D7D;
+}
+
+
+.item-address .nav-wrapper{
+ margin: 10px;
+}
+
+.item-address .map{
+     width: 100%;
+     margin: 22px 0;
+}
+
+.nav-btn{
+     display: block;
+     padding: 14px;
+     background-color: #009595;
+     border-radius: 36px;
+     color: #00332F;
+     text-decoration: initial;
+     text-align: center;
+     margin: 15px 20px;
+     font-size: 25px;
+}
+
+.btn-tel{
+display: inline-block;
+     padding: 12px;
+     background-color: #E57055;
+     border-radius: 15px;
+     color: #462304;
+     text-decoration: initial;
+     text-align: center;
+     margin: 15px 20px;
+     font-size: 23px;
 }
