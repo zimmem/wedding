@@ -137,7 +137,8 @@
          function touchEscape(event){
             var escape = $(event.target).closest('.escape');
             if(escape.length && escape[0].scrollHeight - escape[0].clientHeight > 0){
-                console.info("escape")
+                 return true; 
+            }else if(escape.length && escape[0].scrollWidth - escape[0].clientWidth > 0){
                 return true; 
             }
          }
@@ -156,7 +157,7 @@
                 event = event.touches[0];
             }
              //抓取时的所在位置
-            dragStart = event.clientY;
+            dragStart = event.originalEvent.touches[0].pageY;
             
              //分别关闭item的动画效果,动画效果只在松开抓取时出现
             item.addClass('no-animation');
@@ -183,8 +184,8 @@
                 event = event.touches[0];
             }
              //得到抓取开始时于进行中的差值的百分比
-            percentage = (dragStart - event.clientY) / window.screen.height;//
-             
+            percentage = (dragStart - event.originalEvent.touches[0].clientY) / window.screen.height;//
+            
             if (percentage > 0) {
                 // //向上拖动
                 var scale = 1 - 0.5*percentage;//缩放系数，可以微调
@@ -210,7 +211,8 @@
            if(touchEscape(event)) return;
 
             //防止多次滚动，故增加一个覆盖层
-            $('.overlay').show();
+            //$('.overlay').show();
+            //$('.overlay').hide();
             dragStart = null;
             var item = $(event.target).closest('.item');
              if (!item.length) {
@@ -223,8 +225,10 @@
             
             //抓取停止后，根据临界值做相应判断
             if (percentage >= dragThreshold) {
+                $('.overlay').show();
                 nextSlide(item);
             } else if ( Math.abs(percentage) >= dragThreshold ) {
+                 $('.overlay').show();
                 prevSlide(item);
             } else {
                 showSlide(item);
@@ -252,6 +256,7 @@
              //$(event.target).prev().css('-webkit-transform', 'translateY(0)'); 
          }
          function nextSlide(item){
+
             //$(event.target).removeClass('parallax-item');
             //恢复到原样，或者展示下一item
             if (item.next().length) { 
@@ -268,7 +273,7 @@
             }
             
          }
-         function prevSlide(item){
+        this.prevSlide = function prevSlide(item){
             //$(event.target).removeClass('parallax-item');
             if (item.prev().length) {
 
@@ -308,7 +313,8 @@
          }
          function orderPart(dom){
             var parts = $(dom).find('.part');
-            parts.forEach(function(item){
+            parts.each(function(i, item){
+
                 var time = $(item).attr('data-delay') || 100;
                 setTimeout(function(){
                     $(item).removeClass('hide');
@@ -380,7 +386,7 @@
                         }, false);  
                     }
             }
-            $('.music').on('tap',function(){
+            $('.music').on('click',function(){
                 $(this).toggleClass('play');
                 var audio = document.getElementById('audio');
                 if (audio.paused) {
@@ -410,6 +416,10 @@
             
             $('.item').on('tap', function(){
                 //覆盖层隐藏
+                console.info('tap');
+                $('.overlay').hide();
+            });
+            $('.item').on('click', function(){
                 $('.overlay').hide();
             });
             $('.item').on('transitionend webkitTransitionEnd', function(event){
@@ -424,10 +434,11 @@
                // opt.pageComplete(event.target);
                // debugger;
             });
-            $('.overlay').on('tap', function(){
+            $('.overlay').on('click', function(){
                 //覆盖层隐藏
                 $('.overlay').hide();
             });
          }
          
+         window.h5fp=this;
     })();
