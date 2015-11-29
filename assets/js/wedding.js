@@ -3,7 +3,8 @@
 	function getQueryString(name) {
 	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 	    var r = window.location.search.substr(1).match(reg);
-	    if (r != null) return unescape(r[2]); return null;
+	    console.info(r);
+	    if (r != null) return decodeURIComponent(r[2]); return null;
     }
 
     var nick = getQueryString('name');
@@ -22,7 +23,7 @@
 					 	庄钊文 与 卢玲</br>  \
 					 	届时欢迎大驾光临！\
 					 </div>\
-					 <div class="notic">请继随翻页欣赏我们的婚纱照</div>'
+					 <div class="notic">请继续翻页欣赏我们的婚纱照</div>'
 				);
 			}
 		}).error(function(e){

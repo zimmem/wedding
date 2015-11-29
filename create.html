@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html class="js-no-overflow-scrolling">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>创建喜帖</title>
+</head>
+<body>
+	<input id="name-input" value="" placeholder="输入被邀请者称呼"/>
+	<button id="btn">创建并进入</button>
+	<script type="text/javascript">
+		document.getElementById('btn').onclick = function(){
+			var name = document.getElementById('name-input').value;
+			window.location.href = './?name=' + encodeURIComponent(name);
+		}
+	</script>
+</body>
+</html>
