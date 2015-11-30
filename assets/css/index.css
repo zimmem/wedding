@@ -65,9 +65,10 @@ ul {
 .item2 {
     background-color: #0067A6;
 }
-.item1 {
+.item.item1 {
     background: url("../img/496A7829.jpg") no-repeat;
     background-size: cover;
+    background-position: top center;
 }
 .item3 {
     background-color: #008972;
