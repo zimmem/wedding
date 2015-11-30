@@ -237,6 +237,30 @@
             percentage = 0;
 
          }
+	function mousewheel(event){
+	    console.info(event.originalEvent.deltaY);
+	    var item=$(event.target).closest('.item');
+	    if (!item.length) {
+                 $('.overlay').hide();
+                 return;
+             }
+            item.removeClass('no-animation');
+            item.next().removeClass('no-animation');
+            item.prev().removeClass('no-animation');
+
+            //抓取停止后，根据临界值做相应判断
+            if (event.originalEvent.deltaY > 0 ) {
+                $('.overlay').show();
+                nextSlide(item);
+            } else if (event.originalEvent.deltaY < 0  ) {
+                 $('.overlay').show();
+                prevSlide(item);
+            } else {
+                showSlide(item);
+            }
+             //重置percentage
+            percentage = 0;
+	}
          function swipeUp(event){
             var item = $(event.target).closest('.item');
             if (!item.length) {
@@ -290,6 +314,7 @@
          function showSlide(item){
             //$(event.target).removeClass('parallax-item');
              obj[opt.type].showSlide(item);
+	      $('.overlay').hide();
          }
          function initDom(opt){
             $('body').addClass('H5FullscreenPage');
@@ -410,7 +435,8 @@
                    'touchstart': touchStart,
                    'touchmove': touchMove,
                    'touchend': touchEnd,
-                   'touchcancel': touchEnd
+                   'touchcancel': touchEnd,
+		   'mousewheel' : mousewheel
                 });
             }
             

@@ -91,18 +91,31 @@
 			'496A7941.jpg',
 			'496A7962.jpg'
 		];
+		
 
 		var photo_endpoint = './assets/photos/';
 
 		var line1 = $('#p-line1');
 		var line2 = $('#p-line2');
 		for(var i  = 0 ; i < photos.length ; i ++ ){
+			photos[i] = photo_endpoint + photos[i];
 			if(line1.width() >  line2.width()){
-				 line2.append('<img src="'+photo_endpoint + photos[i] +'"/>')
+				 line2.append('<img src="'+ photos[i] +'"/>')
 			}else{
-				line1.append('<img src="'+photo_endpoint + photos[i] +'"/>')
+				line1.append('<img src="'+ photos[i] +'"/>')
 			}
 		}
+		
+		$('.p-line img').click(function(){
+			var that = this;
+
+			alert(this.src);
+			wx.previewImage({
+			    current: that.src, // 当前显示图片的http链接
+			    urls: photos // 需要预览的图片http链接列表
+			});
+		});
+
 
 	})();
 
@@ -120,6 +133,7 @@
 		var countdown = Math.ceil((wedding_date - current)/(24*60*60*1000));
 		$('#countdown').text(countdown);
 	})();
+	
 
-
+	//wechat
 });
