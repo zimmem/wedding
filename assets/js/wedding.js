@@ -32,6 +32,8 @@
 		
 	});
 
+	var previewPhotos = [];
+
 	(function(){
 
 		var photos = [
@@ -93,16 +95,17 @@
 		];
 		
 
-		var photo_endpoint = './assets/photos/';
+		var photo_endpoint = './assets/photos_270/';
 
 		var line1 = $('#p-line1');
 		var line2 = $('#p-line2');
 		for(var i  = 0 ; i < photos.length ; i ++ ){
+			previewPhotos[i] = 'http://wedding.zimmem.com/assets/photos_540/' + photos[i];
 			photos[i] = photo_endpoint + photos[i];
 			if(line1.width() >  line2.width()){
-				 line2.append('<img src="'+ photos[i] +'"/>')
+				 line2.append('<img src="'+ photos[i] +'" data-source="'+ previewPhotos[i] +'"/>')
 			}else{
-				line1.append('<img src="'+ photos[i] +'"/>')
+				line1.append('<img src="'+ photos[i] +' data-source="'+ previewPhotos[i] +'"/>')
 			}
 		}
 		
@@ -145,8 +148,14 @@
 		wx.ready(function(){
 			$("img.map").click(function(){
 				wx.previewImage({
-				    current: './assets/img/map.png', // 当前显示图片的http链接
-				    urls: ['./assets/img/map.png'] // 需要预览的图片http链接列表
+				    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
+				    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
+				});
+			});
+			$('.pline img').click(function(){
+				wx.previewImage({
+				    current:  $(this).data("source"), // 当前显示图片的http链接
+				    urls: previewPhotos // 需要预览的图片http链接列表
 				});
 			});
 		});
