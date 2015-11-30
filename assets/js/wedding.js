@@ -109,17 +109,6 @@
 			}
 		}
 		
-		$('.p-line img').click(function(){
-			var that = this;
-
-			alert(this.src);
-			wx.previewImage({
-			    current: that.src, // 当前显示图片的http链接
-			    urls: photos // 需要预览的图片http链接列表
-			});
-		});
-
-
 	})();
 
 
@@ -152,7 +141,7 @@
 				    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
 				});
 			});
-			$('.pline img').click(function(){
+			$('.p-line img').click(function(){
 				wx.previewImage({
 				    current:  $(this).data("source"), // 当前显示图片的http链接
 				    urls: previewPhotos // 需要预览的图片http链接列表
