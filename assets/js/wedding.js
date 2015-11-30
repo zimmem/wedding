@@ -136,4 +136,20 @@
 	
 
 	//wechat
+	if(wx){
+		$.get("/backend/wx_js_config?url="+encodeURIComponent(window.location.href), function(config){
+			config.jsApiList = ["previewImage"];
+			wx.config(config);
+		})
+
+		wx.ready(function(){
+			$("img.map").click(function(){
+				wx.previewImage({
+				    current: './assets/img/map.png', // 当前显示图片的http链接
+				    urls: ['./assets/img/map.png'] // 需要预览的图片http链接列表
+				});
+			});
+		}
+	}
+	
 });
