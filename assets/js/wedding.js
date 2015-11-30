@@ -105,7 +105,7 @@
 			if(line1.width() >  line2.width()){
 				 line2.append('<img src="'+ photos[i] +'" data-source="'+ previewPhotos[i] +'"/>')
 			}else{
-				line1.append('<img src="'+ photos[i] +' data-source="'+ previewPhotos[i] +'"/>')
+				line1.append('<img src="'+ photos[i] +'" data-source="'+ previewPhotos[i] +'"/>')
 			}
 		}
 		
