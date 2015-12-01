@@ -134,7 +134,7 @@
 		})
 
 		wx.ready(function(){
-			$("img.map").click(function(){
+			$(".map-wrapper").click(function(){
 				wx.previewImage({
 				    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
 				    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
