@@ -10,10 +10,31 @@
 <body>
 	<input id="name-input" value="" placeholder="输入被邀请者称呼"/>
 	<button id="btn">创建并进入</button>
+	<button id="qr-btn">创建二维码</button>
+	<button id="qr-btn-noname">创建通用二维码</button>
+	<div>
+	<div id="qr-wrap" style="display:none;padding:20px;display:inline-block;">
+	<div  style="margin:auto;text-align: center; color: #F95521; font-weight:bold;">喜柬-庄钊文&卢玲</div>
+	<div id="qrcode" style="margin:5px; padding:5px;"></div>
+	<div style="text-align: center;     color: #828282;font-size: 15px;">微信扫一扫或识别图片中的二维码</div>
+	</div>
+	</div>
+	<script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+	<script src="./assets/js/jquery.qrcode.min.js"></script>
 	<script type="text/javascript">
 		document.getElementById('btn').onclick = function(){
 			var name = document.getElementById('name-input').value;
 			window.location.href = './?name=' + encodeURIComponent(name);
+		}
+		document.getElementById('qr-btn').onclick = function(){
+			 $('#qrcode').html("");
+			$('#qrcode').qrcode("http://wedding.zimmem.com/?name=" + encodeURIComponent($('#name-input').val()));
+			$('#qr-wrap').show();
+		}
+		document.getElementById('qr-btn-noname').onclick = function(){
+			 $('#qrcode').html("");
+			$('#qrcode').qrcode("http://wedding.zimmem.com/");
+			$('#qr-wrap').show();
 		}
 	</script>
 </body>

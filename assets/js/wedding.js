@@ -15,9 +15,8 @@
 
 
 	$('#regist-submit-btn').click(function(){
-		console.info("a");
 		$.post('/backend/regist', $('#regist-form').serialize(), function(result){
-			if(result === 'success'){
+			console.info(result);
 				$('.regist-form').html(
 					'<div class="submit-success">你的信息已登记</br> \
 					 	庄钊文 与 卢玲</br>  \
@@ -25,7 +24,7 @@
 					 </div>\
 					 <div class="notic">请继续翻页欣赏我们的婚纱照</div>'
 				);
-			}
+				console.info($('.regist-form').html());
 		}).error(function(e){
 			console.info("error");
 		});
