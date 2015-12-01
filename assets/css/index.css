@@ -12,11 +12,23 @@ html, body {
     padding: 0;
 }
 
+.map-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 68px;
+    background-size: contain;
+    background-position: center;
+    background: url(../img/map.png) no-repeat;*/;
+}
+
 .connect-wrapper {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 20px;
+    white-space: nowrap;
 }
 
 .pline {
@@ -359,7 +371,7 @@ color: #A7A7A7;
 
 .item-address h2{
      color: #FF7D7D;
-     padding: 20px;
+     padding: 20px 0 10px 0;
 }
 
 .item-address h3{
@@ -368,7 +380,12 @@ color: #A7A7A7;
 
 
 .item-address .nav-wrapper{
- margin: 10px;
+ margin: 0 10px;
+ position: absolute;
+ top: 77px;
+ left: 0;
+ right: 0;
+ bottom: 106px;
 }
 
 .item-address .map{
@@ -386,6 +403,10 @@ color: #A7A7A7;
      text-align: center;
      margin: 0px 26px;
      font-size: 25px;
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
 }
 
 .btn-tel{
