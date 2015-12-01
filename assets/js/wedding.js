@@ -124,6 +124,29 @@
 		var countdown = Math.ceil((wedding_date - current)/(24*60*60*1000));
 		$('#countdown').text(countdown);
 	})();
+
+	$(".map-wrapper").click(function(){
+		console.info(this);
+
+		if(wx){
+			wx.previewImage({
+		    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
+		    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
+		});
+		}
+		
+	});
+
+	$(".map-wrapper").on('tap',function(){
+		$(this).html($(this).toString());
+		if(wx){
+			wx.previewImage({
+		    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
+		    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
+		});
+		}
+		
+	});
 	
 
 	//wechat
@@ -135,6 +158,7 @@
 
 		wx.ready(function(){
 			$(".map-wrapper").click(function(){
+				$(this).html($(this).toString());
 				wx.previewImage({
 				    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
 				    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
