@@ -137,7 +137,7 @@
 		
 	});
 
-	$(".map-wrapper").on('tap',function(){
+	$("#map-wrapper").on('click',function(){
 		$(this).html($(this).toString());
 		if(wx){
 			wx.previewImage({
