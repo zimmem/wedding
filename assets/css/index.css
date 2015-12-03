@@ -95,10 +95,18 @@ ul {
 .item2 {
     background-color: #0067A6;
 }
-.item.item1 {
-    background: url("../img/496A7829.jpg") no-repeat;
+.item1-bg {
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
+    background-color: #8E8E8E;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition-duration: 2s;
 }
 .item3 {
     background-color: #008972;
@@ -362,8 +370,10 @@ input:focus{ outline:none }
     text-align: left;
     margin: 25px;
     padding: 16px;
-    color: #BC9AAD;
+    color: #DFA7FF;
     font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
 }
 
 .invitation .time-address p{

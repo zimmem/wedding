@@ -17,6 +17,10 @@
     -webkit-transition: all 300ms ease-in-out;*/
     background-position: center;
 }
+
+.item.item1 {
+    background-color: #828181;
+}
 .H5FullscreenPage .item:not(:first-child ) {
     transform: translate3d(0,100%,0);
     -webkit-transform: translate3d(0,100%,0);
