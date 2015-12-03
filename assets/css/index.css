@@ -152,6 +152,7 @@ ul {
     z-index: 1;
     background: url(../img/30_root.png) no-repeat;
     background-size: cover;
+    opacity: 0.9;
 }
 
 .item3 .part1 {
