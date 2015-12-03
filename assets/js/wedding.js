@@ -47,21 +47,6 @@
     	"http://wedding.zimmem.com/assets/photos_540/496A7854.jpg"
     ];
 
-   
-	// var loaded = 0;
-	// var loadPhoto = function(){
-	// 	if(loaded < bc_photos.length){
-	// 		var url = bc_photos[loaded];
-	// 		$('<img src="http://wedding.zimmem.com/assets/photos_540/496A7481.JPG"/>').on('load', function(){
-	// 			bc_photos_loaded.push(bc_photos[loaded]);
-	// 			loaded ++;
-	// 			loadPhoto();
-	// 		})
-	// 	}
-		
-	// }
-	// loadPhoto();
-
 
     var banner = 0;
     var current = 0;
@@ -71,17 +56,10 @@
     		banner = 0;
     	}
     	console.info(banner + ' ' + bc_photos_loaded[banner]);
-    	if(current % 2 == 0){
-    		$('#bg1').css({'background-image' : 'url('+bc_photos_loaded[banner]+')', 'opacity':1});
-    		$('#bg2').css({opacity:0});
-    	}else{
-    		$('#bg2').css({'background-image' :  'url('+ bc_photos_loaded[banner]+')', 'opacity':1});
-    		$('#bg1').css({opacity:0});
-    	}
-    	current ++;
+    	$('#bg1').css({'background-image' : 'url('+bc_photos_loaded[banner]+')'});
     }
     runbanner();
-    setInterval(runbanner, 3000);
+    setInterval(runbanner, 5000);
 
 
 	$('#regist-submit-btn').click(function(){
