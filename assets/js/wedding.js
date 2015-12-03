@@ -1,16 +1,42 @@
 ;$(function(){
 
+   
+
 	function getQueryString(name) {
 	    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 	    var r = window.location.search.substr(1).match(reg);
-	    console.info(r);
 	    if (r != null) return decodeURIComponent(r[2]); return null;
     }
+
+    if(getQueryString('debug')){
+	 $debug = $('<div id="debug" style="position:absolute; top:0; left:0; right:0; bottom: 75%; background: rgba(0, 0, 0, 0.4); ; z-index:100; color:white;" />');
+	var o = 0;
+	 $debug.click(function(){
+		o++;
+		if(o%2 == 1){
+		$(this).css({top:"75%", bottom:"0"});
+		}else{
+		$(this).css({bottom:"75%", top:"0"});
+		}
+		});
+	  $('body').append($debug);
+	console.info = function(s){
+		$debug.append($("<p/>").text(s));		
+	}
+	}
+	var audio = $('#audio')[0];
+audio.addEventListener('canplay', function() {
+  audio.play();
+});
+
+audio.load();
+audio.play();
 
     var nick = getQueryString('name');
     if(nick){
     	$('.invitation-desc').html("尊敬的" + nick + '</br>' + $('.invitation-desc').html());
     	$('#nick-input').val(nick);
+	document.title = "尊敬的"+nick + '， 庄钊文与卢玲邀您参加婚宴';
     }
 
 
@@ -125,29 +151,6 @@
 		$('#countdown').text(countdown);
 	})();
 
-	$(".map-wrapper").click(function(){
-		console.info(this);
-
-		if(wx){
-			wx.previewImage({
-		    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
-		    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
-		});
-		}
-		
-	});
-
-	$("#map-wrapper").on('click',function(){
-		$(this).html($(this).toString());
-		if(wx){
-			wx.previewImage({
-		    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
-		    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
-		});
-		}
-		
-	});
-	
 
 	//wechat
 	if(wx){
@@ -158,7 +161,6 @@
 
 		wx.ready(function(){
 			$(".map-wrapper").click(function(){
-				$(this).html($(this).toString());
 				wx.previewImage({
 				    current: 'http://wedding.zimmem.com/assets/img/map.png', // 当前显示图片的http链接
 				    urls: ['http://wedding.zimmem.com/assets/img/map.png'] // 需要预览的图片http链接列表
